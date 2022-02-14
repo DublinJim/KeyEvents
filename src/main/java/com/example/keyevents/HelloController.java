@@ -1,7 +1,6 @@
 package com.example.keyevents;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -11,7 +10,7 @@ public class HelloController {
   @FXML private Text txt1;
 
   @FXML
-  void closeApp(ActionEvent event) {
+  void closeApp() {
     Platform.exit();
   }
 
@@ -19,8 +18,11 @@ public class HelloController {
   void whatsTheKey(KeyEvent event) {
     if (event.getCode() == KeyCode.ENTER) {
 
-      txt1.setText("You pressed enter");
+      txt1.setText("You pressed Enter");
     }
+    if (event.getCode() == KeyCode.SPACE) {
 
+      txt1.setText("You pressed Spacebar");
+    }
   }
 }
